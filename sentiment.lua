@@ -835,5 +835,6 @@ Tab:AddButton({
   	end    
 })
 
+-- Initialize OrionLib gui
 ---https://discord.gg/jncvgVrTcY :)
 OrionLib:Init()
