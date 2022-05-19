@@ -1,14 +1,20 @@
 - [Sentiment](#sentiment)
-  - [Todo](#todo)
-  - [Issues](#issues)
+  - [Current Features](#current-features)
+  - [Todo/Planned Features](#todoplanned-features)
+  - [Suggestions](#suggestions)
+  - [Known Issues](#known-issues)
   - [Supported Executors](#supported-executors)
   - [Usage](#usage)
   
 # Sentiment
 
-## Todo
+## Current Features
 
-## Issues
+## Todo/Planned Features
+
+## Suggestions
+
+## Known Issues
 
 ## Supported Executors
 - Synapse X
