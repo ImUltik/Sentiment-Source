@@ -15,6 +15,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Sentiment", HidePremium = false, SaveConfig = true, ConfigFolder = "SentimentConfig"})
 local Orion = CoreGui:WaitForChild("Orion")
 
+-- Read and create Config files
 if isfolder("SentimentConfig") then
 	if not isfolder("SentimentConfig/Core") then
 		makefolder("SentimentConfig/Core")
@@ -41,6 +42,7 @@ end
 
 local Label = nil
 
+-- Setup PlayLocalSound function for playing sounds
 local function PlayLocalSound (assetid)
 	local sound = Instance.new("Sound")
 
@@ -50,6 +52,7 @@ local function PlayLocalSound (assetid)
 	SoundService:PlayLocalSound(sound)
 end
 
+-- Setup sounds table for playing notifications/UI sounds
 local function Sounds(Number)
 	if Number == 1 then -- friend notification
 		PlayLocalSound("rbxassetid://5515669992")
@@ -62,8 +65,10 @@ local function Sounds(Number)
 	end
 end
 
+-- Play boot sound
 Sounds(0)
 
+-- Create LocalPlayer tab
 local Tab = Window:MakeTab({
 	Name = "LocalPlayer",
 	Icon = "rbxassetid://7072716196",
