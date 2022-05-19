@@ -22,7 +22,7 @@ if isfolder("SentimentConfig") then
 	if not isfolder("SentimentConfig/Songs") then
 		makefolder("SentimentConfig/Songs")
 	end
-	if not isfile("SentimentConfig/Core/disclaimzer.txt") then
+	if not isfile("SentimentConfig/Core/disclaimer.txt") then
 		writefile("SentimentConfig/Core/disclaimer.txt", "Please do not edit the contents of these files.\nThese files are either core files for the script or config files you can change in-game.")
 	end
 	if not isfile("SentimentConfig/Core/color.r") then
