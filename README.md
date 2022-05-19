@@ -6,7 +6,7 @@
   - [Supported Executors](#supported-executors)
   - [Usage](#usage)
   - [Credits](#credits)
-  
+
 # Sentiment
 ## Current Features
 
@@ -24,7 +24,7 @@
 
 ## Usage
 ```lua
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-Source/main/v2.1.lua?token=<token>"),true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-Source/main/sentiment.lua?token=<token>"),true))()
 ```
 
 ## Credits
