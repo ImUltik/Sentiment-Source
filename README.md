@@ -35,4 +35,4 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-So
 - [Nil](https://github.com/nilIsHot):<br/>
   Developer
 - [Rxyanlaw](https://github.com/Rxyanlaw):<br/>
-  Developer
+  Develope
