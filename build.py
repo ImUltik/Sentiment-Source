@@ -8,10 +8,10 @@ from re import findall, sub
 buildFile = open('sentiment.lua', 'r')
 buildLines = buildFile.read()
 
-lineCount = len(re.findall("\n", buildLines))
-commentCount = len(re.findall("--.*", buildLines))
+lineCount = len(findall("\n", buildLines))
+commentCount = len(findall("--.*", buildLines))
 
-buildLines = re.sub("--.*\n", "", buildLines)
+buildLines = sub("--.*\n", "", buildLines)
 
 print("{*} Removed ", commentCount, " comments!")
 print("{*} Writing ", lineCount, " lines!")
