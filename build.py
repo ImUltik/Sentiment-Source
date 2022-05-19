@@ -3,21 +3,15 @@
 
 import os.path 
 from os import mkdir
+from re import findall, sub
 
 buildFile = open('sentiment.lua', 'r')
-buildLines = buildFile.readlines()
+buildLines = buildFile.read()
 
-lineCount = 0
-commentCount = 0
+lineCount = len(re.findall("\n", buildLines))
+commentCount = len(re.findall("--.*", buildLines))
 
-lines = []
-
-for line in buildLines:
-    lineCount += 1
-    if(line.startswith("--")):
-        commentCount += 1
-    else:
-        lines.append(line)
+buildLines = re.sub("--.*\n", "", buildLines)
 
 print("{*} Removed ", commentCount, " comments!")
 print("{*} Writing ", lineCount, " lines!")
@@ -31,4 +25,4 @@ else:
     print("{*} Writing to ./build/compiled.lua")
 
 compiledFile = open("build/compiled.lua", 'w')
-compiledFile.writelines(lines)
+compiledFile.write(buildLines)
