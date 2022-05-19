@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local CoreGui = game:GetService("CoreGui")
@@ -336,6 +337,7 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 		for i,v in pairs(commands) do
+---@diagnostic disable-next-line: undefined-field
 			local commandSplit = string.split(Value, " ")
 			if string.lower(commandSplit[1]) == string.lower(i) then
 				v.Callback(commandSplit) -- removes command from args table

@@ -1,0 +1,30 @@
+{
+    "Lua.diagnostics.globals": [
+        "Color3",
+        "readfile",
+        "workspace",
+        "game",
+        "isfolder",
+        "makefolder",
+        "isfile",
+        "writefile",
+        "Instance",
+        "Vector2",
+        "task",
+        "setfpscap",
+        "Vector3"
+    ],
+    "cSpell.words": [
+        "assetid",
+        "isfile",
+        "isfolder",
+        "listfiles",
+        "makefolder",
+        "preobfuscate",
+        "rbxassetid",
+        "readfile",
+        "setfpscap",
+        "Walkspeed",
+        "writefile"
+    ]
+}
