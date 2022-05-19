@@ -8,15 +8,14 @@
   - [Credits](#credits)
   
 # Sentiment
-<To complete>
 ## Current Features
-<TODO>
+
 ## Todo/Planned Features
-<TODO>
+
 ## Suggestions
-<TODO>
+
 ## Known Issues
-<TODO>
+
 
 ## Supported Executors
 - Synapse X
