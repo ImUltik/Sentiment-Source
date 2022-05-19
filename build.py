@@ -1,5 +1,5 @@
 # TODO 
-# Auto-remove comments, auto-preobfuscate, auto-test* if possible
+# auto-preobfuscate, auto-test* if possible
 
 import os.path 
 from os import mkdir
