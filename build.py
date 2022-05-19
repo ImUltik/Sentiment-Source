@@ -20,6 +20,7 @@ for line in buildLines:
         lines.append(line)
 
 print("{*} Removed ", commentCount, " comments!")
+print("{*} Writing ", lineCount, " lines!")
 
 
 if(os.path.exists("build")):
