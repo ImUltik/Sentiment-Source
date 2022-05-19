@@ -1,4 +1,5 @@
 ---@diagnostic disable: deprecated
+-- Setup Service variables
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local CoreGui = game:GetService("CoreGui")
@@ -9,6 +10,7 @@ local MarketplaceService = game:GetService("MarketplaceService")
 local SoundService = game:GetService("SoundService")
 local UserInputService = game:GetService("UserInputService")
 
+-- Import OrionLib and create Window
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Sentiment", HidePremium = false, SaveConfig = true, ConfigFolder = "SentimentConfig"})
 local Orion = CoreGui:WaitForChild("Orion")

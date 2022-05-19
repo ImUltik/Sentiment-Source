@@ -29,5 +29,5 @@ else:
     mkdir("build")
     print("{*} Writing to ./build/compiled.lua")
 
-compiledFile = open("build/compiled.lua", 'x')
+compiledFile = open("build/compiled.lua", 'w')
 compiledFile.writelines(lines)
