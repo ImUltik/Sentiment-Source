@@ -28,5 +28,11 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-So
 ```
 
 ## Credits
-<TODO>
-
+- [Ultik](https://github.com/ImUltik):<br/>
+  Founder
+- [Bea](https://github.com/beailotus):<br/>
+  Developer
+- [Nil](https://github.com/nilIsHot):<br/>
+  Developer
+- [Rxyanlaw](https://github.com/Rxyanlaw):<br/>
+  Developer
