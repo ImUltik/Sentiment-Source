@@ -75,6 +75,7 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+-- Create slider for walkspeed
 local SelectedWS
 Tab:AddSlider({
 	Name = "Walkspeed",
@@ -91,6 +92,7 @@ Tab:AddSlider({
 	end    
 })
 
+-- Create slider for jump power
 Tab:AddSlider({
 	Name = "JumpPower",
 	Min = 50,
@@ -106,6 +108,7 @@ Tab:AddSlider({
 	end    
 })
 
+-- Loop walkspeed function initialize
 local LoopWSToggle = false
 local LoopWSFunction = nil
 local function LoopWS()
@@ -120,6 +123,7 @@ local function LoopWS()
 	end
 end
 
+-- Create toggle for walkspeed function
 Tab:AddToggle({
 	Name = "Loop Walkspeed",
 	Default = false,
@@ -130,6 +134,7 @@ Tab:AddToggle({
 })
 LoopWS()
 
+-- Create slider to change workspace gravity value 
 Tab:AddSlider({
 	Name = "Gravity",
 	Min = 0,
@@ -144,6 +149,7 @@ Tab:AddSlider({
 	end    
 })
 
+-- Create FOV slider
 Tab:AddSlider({
 	Name = "Field of View",
 	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
@@ -158,6 +164,7 @@ Tab:AddSlider({
 	end    
 })
 
+-- Create anti-idle toggle
 Tab:AddButton({
 	Name = "Anti-Idle",
 	Callback = function()
@@ -190,6 +197,7 @@ Tab:AddButton({
 	end
 })
 
+-- Create FPS cap slider
 Tab:AddSlider({
 	Name = "Set FPS Cap",
 	Min = 30,
@@ -204,6 +212,7 @@ Tab:AddSlider({
 	end    
 })
 
+-- Add Server Hop Button
 Tab:AddButton({
 	Name = "Server Hop",
 	Callback = function()
@@ -220,6 +229,7 @@ Tab:AddButton({
   	end 
 })
 
+-- Add rejoin server button
 Tab:AddButton({
 	Name = "Rejoin",
 	Callback = function()
@@ -235,6 +245,7 @@ Tab:AddButton({
   	end
 })
 
+-- On player join server, notify if they are a friend
 Players.PlayerAdded:Connect(function(Player)
     if Player:IsFriendsWith(LocalPlayer.UserId) then
         OrionLib:MakeNotification({
@@ -247,6 +258,7 @@ Players.PlayerAdded:Connect(function(Player)
     end
 end)
 
+-- Notify the user and welcome them back
 OrionLib:MakeNotification({
 	Name = "Welcome back, " .. LocalPlayer.Name,
 	Content = "It's high noon.",
