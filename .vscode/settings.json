@@ -43,6 +43,7 @@
         "listfiles",
         "loadstring",
         "makefolder",
+        "Moller",
         "mollermethod",
         "preobfuscate",
         "rbxassetid",
