@@ -24,12 +24,14 @@
 - Admin Commands
   - Fly
 - Verified Scripts 
-  - Solaris Hub
-  - Moller Method
-  - Orca
-  - Fates Admin
-  - Infinite Yield
-  - OpenHub
+  - Most used hub
+    - Solaris Hub 
+  - Universal 
+    - Moller Method
+    - Orca
+    - Fates Admin
+    - Infinite Yield
+    - OpenHub
   - Simulator Games
     - Hades Hub
     - KJ Hub
