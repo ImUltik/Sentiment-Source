@@ -395,7 +395,7 @@ Tab:AddDropdown({
 	end    
 })
 
-Tab:AddParagraph("Universal","For all games")
+Tab:AddParagraph("Universal", "For all games")
 
 Tab:AddButton({
 	Name = "mollermethod",
@@ -828,7 +828,7 @@ local Tab = Window:MakeTab({
 Tab:AddDropdown({
 	Name = "Script Developers",
 	Default = "Ultik#0001",
-	Options = {"Ultik#0001", "Extrovert#1785", "isaac deez bungo#0110", "nil#1111", "Perception#7960", "05_4#2430", "Smiley#1054"},
+	Options = {"Ultik#0001", "Extrovert#1785", "isaac deez bungo#0110", "nil#1111", "Perception#7960", "05_4#2430", "Smiley#1054", "Bea#7453"},
 	Callback = function(Value)
 		
 	end 
