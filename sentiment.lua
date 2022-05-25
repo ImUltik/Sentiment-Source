@@ -12,31 +12,31 @@ local UserInputService = game:GetService("UserInputService")
 
 -- Import OrionLib and create Window
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Sentiment", HidePremium = false, SaveConfig = true, ConfigFolder = "SentimentConfig"})
+local Window = OrionLib:MakeWindow({Name = "Sentiment", HidePremium = false, SaveConfig = true, ConfigFolder = "VisionConfigs"})
 local Orion = CoreGui:WaitForChild("Orion")
 
 -- Read and create Config files
-if isfolder("SentimentConfig") then
-	if not isfolder("SentimentConfig/Core") then
-		makefolder("SentimentConfig/Core")
+if isfolder("VisionConfigs") then
+	if not isfolder("VisionConfigs/Core") then
+		makefolder("VisionConfigs/Core")
 	end
-	if not isfolder("SentimentConfig/Scripts") then
-		makefolder("SentimentConfig/Scripts")
+	if not isfolder("VisionConfigs/Scripts") then
+		makefolder("VisionConfigs/Scripts")
 	end
-	if not isfolder("SentimentConfig/Songs") then
-		makefolder("SentimentConfig/Songs")
+	if not isfolder("VisionConfigs/Songs") then
+		makefolder("VisionConfigs/Songs")
 	end
-	if not isfile("SentimentConfig/Core/disclaimer.txt") then
-		writefile("SentimentConfig/Core/disclaimer.txt", "Please do not edit the contents of these files.\nThese files are either core files for the script or config files you can change in-game.")
+	if not isfile("VisionConfigs/Core/disclaimer.txt") then
+		writefile("VisionConfigs/Core/disclaimer.txt", "Please do not edit the contents of these files.\nThese files are either core files for the script or config files you can change in-game.")
 	end
-	if not isfile("SentimentConfig/Core/color.r") then
-        writefile("SentimentConfig/Core/color.r", "0.45490196347236633")
+	if not isfile("VisionConfigs/Core/color.r") then
+        writefile("VisionConfigs/Core/color.r", "0.45490196347236633")
     end
-    if not isfile("SentimentConfig/Core/color.g") then
-        writefile("SentimentConfig/Core/color.g", "0.4117647111415863")
+    if not isfile("VisionConfigs/Core/color.g") then
+        writefile("VisionConfigs/Core/color.g", "0.4117647111415863")
     end
-    if not isfile("SentimentConfig/Core/color.b") then
-        writefile("SentimentConfig/Core/color.b", "0.9137254953384399")
+    if not isfile("VisionConfigs/Core/color.b") then
+        writefile("VisionConfigs/Core/color.b", "0.9137254953384399")
     end
 end
 
@@ -83,7 +83,7 @@ Tab:AddSlider({
 	Max = 500,
 	Default = 16,
 	Increment = 1,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	ValueName = "Speed",
 	Callback = function(Value)
 		Sounds(3)
@@ -99,7 +99,7 @@ Tab:AddSlider({
 	Max = 500,
 	Default = 50,
 	Increment = 1,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	ValueName = "Speed",
 	Callback = function(Value)
 		Sounds(3)
@@ -127,7 +127,7 @@ end
 Tab:AddToggle({
 	Name = "Loop Walkspeed",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Callback = function(Value)
 		LoopWS()
 	end
@@ -140,7 +140,7 @@ Tab:AddSlider({
 	Min = 0,
 	Max = 200,
 	Default = 200,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Increment = 1,
 	ValueName = "Gravity",
 	Callback = function(Value)
@@ -152,7 +152,7 @@ Tab:AddSlider({
 -- Create FOV slider
 Tab:AddSlider({
 	Name = "Field of View",
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Min = 10,
 	Max = 120,
 	Default = 70,
@@ -203,7 +203,7 @@ Tab:AddSlider({
 	Min = 30,
 	Max = 500,
 	Default = 120,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Increment = 1,
 	ValueName = "FPS",
 	Callback = function(Value)
@@ -266,110 +266,6 @@ OrionLib:MakeNotification({
 	Time = 15
 })
 
-local Tab = Window:MakeTab({
-	Name = "Admin Cmds",
-	Icon = "rbxassetid://6031229350",
-	PremiumOnly = false
-})
-
-local FloatLoop
-
-local commands = {
-	test = {
-		Description = "Test command",
-		Callback = function (args)
-			print(table.concat(args, " "))
-		end,
-		HiddenInDisplay = true
-	},
-	fly = {
-		Description = "fly magic right",
-		Callback = function (args) 
-
-			local character = LocalPlayer.Character
-			if character then
-				local humanoid = character:FindFirstChildWhichIsA("Humanoid")
-				if humanoid then
-					local root = humanoid.RootPart
-
-					if root then
-						local originalPosition = root.Position
-						root.Position = Vector3.new(1000,1000,1000)
-						task.wait(1)
-						root.Anchored = true
-
-						local flyspeed = 1
-						if tonumber(args[1]) ~= nil then
-							flyspeed = tonumber(args[1])
-						end
-						local fakePart = Instance.new("Part", workspace)
-						fakePart.Anchored = true
-						fakePart.CanCollide = false
-						fakePart.Size = Vector3.new(1,1,1)
-						fakePart.Position = originalPosition
-						if workspace.CurrentCamera then
-							workspace.CurrentCamera.CameraSubject = fakePart
-						else
-							OrionLib:MakeNotification({
-								Name = "Error",
-								Content = "Camera does not exist!",
-								Image = "rbxassetid://7733658271",
-								Time = 15
-							})
-							Sounds(2)
-						end
-					else
-						OrionLib:MakeNotification({
-							Name = "Error",
-							Content = "RootPart does not exist!",
-							Image = "rbxassetid://7733658271",
-							Time = 15
-						})
-						Sounds(2)
-					end
-				else
-					OrionLib:MakeNotification({
-						Name = "Error",
-						Content = "Humanoid does not exist!",
-						Image = "rbxassetid://7733658271",
-						Time = 15
-					})
-					Sounds(2)
-				end
-			else
-				OrionLib:MakeNotification({
-					Name = "Error",
-					Content = "Character does not exist!",
-					Image = "rbxassetid://7733658271",
-					Time = 15
-				})
-				Sounds(2)
-			end
-		end,
-		HiddenInDisplay = false
-	}
-}
-
-Tab:AddTextbox({
-	Name = "Command Bar",
-	Default = "Enter command",
-	TextDisappear = true,
-	Callback = function(Value)
-		for i,v in pairs(commands) do
----@diagnostic disable-next-line: undefined-field
-			local commandSplit = string.split(Value, " ")
-			if string.lower(commandSplit[1]) == string.lower(i) then
-				v.Callback(commandSplit) -- removes command from args table
-			end
-		end
-	end	  
-})
-
-for i,v in pairs(commands) do
-	if not v.HiddenInDisplay then
-		Tab:AddLabel(i)
-	end
-end
 
 local Tab = Window:MakeTab({
 	Name = "Verified Scripts",
@@ -395,7 +291,7 @@ Tab:AddDropdown({
 	end    
 })
 
-Tab:AddParagraph("Universal", "For all games")
+Tab:AddParagraph("Universal","For all games")
 
 Tab:AddButton({
 	Name = "mollermethod",
@@ -493,14 +389,14 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Tutorial on how to add scripts:", "To add scripts, go to the SentimentConfig folder and then next go in Scripts. After you have done this, add TXT or LUA files containing the script.")
+Tab:AddParagraph("Tutorial on how to add scripts:", "To add scripts, go to the VisionConfigs folder and then next go in Scripts. After you have done this, add TXT or LUA files containing the script.")
 
-for Index, Scripts in ipairs(listfiles("SentimentConfig/Scripts")) do
-	Scripts = string.gsub(Scripts, [[SentimentConfig/Scripts\]], "")
+for Index, Scripts in ipairs(listfiles("VisionConfigs/Scripts")) do
+	Scripts = string.gsub(Scripts, [[VisionConfigs/Scripts\]], "")
 	Tab:AddButton({
 		Name = Scripts,
 		Callback = function()
-			loadstring(readfile("SentimentConfig/Scripts/" .. Scripts))() --
+			loadstring(readfile("VisionConfigs/Scripts/" .. Scripts))() --
 		end
 	})
 end
@@ -545,7 +441,7 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
-Tab:AddParagraph("How to use", "Add MP3 File(s) inside workspace and open the folder named SentimentConfig and go to Songs, then place the MP3 File there and re-execute script.")
+Tab:AddParagraph("How to use", "Add MP3 File(s) inside workspace and open the folder named VisionConfigs and go to Songs, then place the MP3 File there and re-execute script.")
 
 local Song = Instance.new("Sound")
 Song.Name = "Sound"
@@ -559,7 +455,7 @@ local Distortion = Instance.new("DistortionSoundEffect")
 Distortion.Parent = Song
 Distortion.Enabled = false
 
-local Songs = listfiles("SentimentConfig/Songs")
+local Songs = listfiles("VisionConfigs/Songs")
 
 for Index, SongFiles in ipairs(Songs) do
 	Songs[Index] = string.match(SongFiles, "([^/\\]+)[/\\]*$")
@@ -571,15 +467,15 @@ local SongDropdown = Tab:AddDropdown({
 	Options = Songs,
 	Callback = function(Value)	
 	    if getcustomasset then
-		    Song.SoundId = getcustomasset("SentimentConfig/Songs/" .. Value) 
+		    Song.SoundId = getcustomasset("VisionConfigs/Songs/" .. Value) 
 	    elseif getsynasset then
-	        Song.SoundId = getsynasset("SentimentConfig/Songs/" .. Value)
+	        Song.SoundId = getsynasset("VisionConfigs/Songs/" .. Value)
 	    end
 	end      
 })
 
 local function RefreshSongs()
-	Songs = listfiles("SentimentConfig/Songs")
+	Songs = listfiles("VisionConfigs/Songs")
 	for Index, SongFiles in ipairs(Songs) do
 		Songs[Index] = string.match(SongFiles, "([^/\\]+)[/\\]*$")
 	end
@@ -625,7 +521,7 @@ Tab:AddSlider({
 	Min = 0.5,
 	Max = 10,
 	Default = 1,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Increment = 0.5,
 	ValueName = "Volume",
 	Callback = function(Value)
@@ -637,7 +533,7 @@ Tab:AddSlider({
 Tab:AddToggle({
 	Name = "Loop",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Callback = function(Value)
 		Song.Looped = Value
 	end
@@ -646,7 +542,7 @@ Tab:AddToggle({
 Tab:AddToggle({
 	Name = "Reverb",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Callback = function(Value)
 		Reverb.Enabled = Value
 	end
@@ -655,7 +551,7 @@ Tab:AddToggle({
 Tab:AddToggle({
 	Name = "Distortion",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Callback = function(Value)
 		Distortion.Enabled = Value
 	end
@@ -671,11 +567,11 @@ Tab:AddLabel("Re-execute Sentiment to apply colors.")
 
 Tab:AddColorpicker({
 	Name = "UI Color",
-	Default = Color3.new(tonumber(readfile("SentimentConfig/Core/color.r")), tonumber(readfile("SentimentConfig/Core/color.g")), tonumber(readfile("SentimentConfig/Core/color.b"))),
+	Default = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
 	Callback = function(Color)
-	    writefile("SentimentConfig/Core/color.r", tostring(Color.R))
-	    writefile("SentimentConfig/Core/color.g", tostring(Color.G))
-	    writefile("SentimentConfig/Core/color.b", tostring(Color.B))
+	    writefile("VisionConfigs/Core/color.r", tostring(Color.R))
+	    writefile("VisionConfigs/Core/color.g", tostring(Color.G))
+	    writefile("VisionConfigs/Core/color.b", tostring(Color.B))
 	end	  
 })
 
@@ -704,7 +600,7 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "Delete Config (common fix)",
     Callback = function()
-        delfolder("SentimentConfig")
+        delfolder("VisionConfigs")
 	end    
 })
 
@@ -826,9 +722,9 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddDropdown({
-	Name = "Script Developers",
+	Name = "Universal Script Developer",
 	Default = "Ultik#0001",
-	Options = {"Ultik#0001", "Extrovert#1785", "isaac deez bungo#0110", "nil#1111", "Perception#7960", "05_4#2430", "Smiley#1054", "Bea#7453"},
+	Options = {"Ultik#0001"},
 	Callback = function(Value)
 		
 	end 
@@ -839,14 +735,14 @@ Tab:AddParagraph("Made for", "Script-Ware | https://script-ware.com")
 Tab:AddParagraph("mollermethod", "https://discord.gg/jncvgVrTcY")
 Tab:AddParagraph("Solaris", "discord.gg/solaris")
 Tab:AddParagraph("Orca", "Made By 0866#3049")
-Tab:AddParagraph("Other Credits", "Unknown")
+Tab:AddParagraph("Other Credits", "In the script")
 Tab:AddButton({
-	Name = "Copy Discord Server",
+	Name = "Copy Vision Discord Server",
 	Callback = function()
-      	setclipboard("discord.gg/P8Spu7zRmm")
+      	setclipboard("https://discord.gg/X2u99terb8")
   	end    
 })
 
 -- Initialize OrionLib gui
----https://discord.gg/jncvgVrTcY :)
+--hi ultik
 OrionLib:Init()
