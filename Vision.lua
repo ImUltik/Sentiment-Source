@@ -692,12 +692,8 @@ Tab:AddDropdown({
 })
 
 local Tags = {
-    [1558968057] = "Owner",
-    [3247089925] = "Canvas",
-    [94147627] = "Clown", -- isaac
-	[1155355889] = "UltraBloxer108",
-	[3009136872] = "nil#1111",
-    [2922850806] = "Friends",
+    [1558968057] = "Developer"
+	--add for example [UserID, USERID] = "rank you want"
 }
 
 for Index, TextLabel in pairs(Orion:GetDescendants()) do
