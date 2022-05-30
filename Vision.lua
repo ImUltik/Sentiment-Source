@@ -10,33 +10,33 @@ local MarketplaceService = game:GetService("MarketplaceService")
 local SoundService = game:GetService("SoundService")
 local UserInputService = game:GetService("UserInputService")
 
--- Import OrionLib and create Window
+-- Import OrionLib and createq Window
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Sentiment", HidePremium = false, SaveConfig = true, ConfigFolder = "VisionConfigs"})
+local Window = OrionLib:MakeWindow({Name = "Vision", HidePremium = true, SaveConfig = true, ConfigFolder = "VisionUniversal"})
 local Orion = CoreGui:WaitForChild("Orion")
 
 -- Read and create Config files
-if isfolder("VisionConfigs") then
-	if not isfolder("VisionConfigs/Core") then
-		makefolder("VisionConfigs/Core")
+if isfolder("VisionUniversal") then
+	if not isfolder("/Core") then
+		makefolder("VisionUniversal/Core")
 	end
-	if not isfolder("VisionConfigs/Scripts") then
-		makefolder("VisionConfigs/Scripts")
+	if not isfolder("VisionUniversal/Scripts") then
+		makefolder("VisionUniversal/Scripts")
 	end
-	if not isfolder("VisionConfigs/Songs") then
-		makefolder("VisionConfigs/Songs")
+	if not isfolder("VisionUniversal/Songs") then
+		makefolder("VisionUniversal/Songs")
 	end
-	if not isfile("VisionConfigs/Core/disclaimer.txt") then
-		writefile("VisionConfigs/Core/disclaimer.txt", "Please do not edit the contents of these files.\nThese files are either core files for the script or config files you can change in-game.")
+	if not isfile("VisionUniversal/Core/disclaimer.txt") then
+		writefile("VisionUniversal/Core/disclaimer.txt", "Please do not edit the contents of these files.\nThese files are either core files for the script or config files you can change in-game.")
 	end
-	if not isfile("VisionConfigs/Core/color.r") then
-        writefile("VisionConfigs/Core/color.r", "0.45490196347236633")
+	if not isfile("VisionUniversal/Core/color.r") then
+        writefile("VisionUniversal/Core/color.r", "0.45490196347236633")
     end
-    if not isfile("VisionConfigs/Core/color.g") then
-        writefile("VisionConfigs/Core/color.g", "0.4117647111415863")
+    if not isfile("VisionUniversal/Core/color.g") then
+        writefile("VisionUniversal/Core/color.g", "0.4117647111415863")
     end
-    if not isfile("VisionConfigs/Core/color.b") then
-        writefile("VisionConfigs/Core/color.b", "0.9137254953384399")
+    if not isfile("VisionUniversal/Core/color.b") then
+        writefile("VisionUniversal/Core/color.b", "0.9137254953384399")
     end
 end
 
@@ -71,7 +71,7 @@ Sounds(0)
 -- Create LocalPlayer tab
 local Tab = Window:MakeTab({
 	Name = "LocalPlayer",
-	Icon = "rbxassetid://7072716196",
+	Icon = "rbxassetid://7743875962",
 	PremiumOnly = false
 })
 
@@ -83,7 +83,7 @@ Tab:AddSlider({
 	Max = 500,
 	Default = 16,
 	Increment = 1,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	ValueName = "Speed",
 	Callback = function(Value)
 		Sounds(3)
@@ -99,7 +99,7 @@ Tab:AddSlider({
 	Max = 500,
 	Default = 50,
 	Increment = 1,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	ValueName = "Speed",
 	Callback = function(Value)
 		Sounds(3)
@@ -127,7 +127,7 @@ end
 Tab:AddToggle({
 	Name = "Loop Walkspeed",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Callback = function(Value)
 		LoopWS()
 	end
@@ -140,7 +140,7 @@ Tab:AddSlider({
 	Min = 0,
 	Max = 200,
 	Default = 200,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Increment = 1,
 	ValueName = "Gravity",
 	Callback = function(Value)
@@ -152,7 +152,7 @@ Tab:AddSlider({
 -- Create FOV slider
 Tab:AddSlider({
 	Name = "Field of View",
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Min = 10,
 	Max = 120,
 	Default = 70,
@@ -203,7 +203,7 @@ Tab:AddSlider({
 	Min = 30,
 	Max = 500,
 	Default = 120,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Increment = 1,
 	ValueName = "FPS",
 	Callback = function(Value)
@@ -268,172 +268,17 @@ OrionLib:MakeNotification({
 
 
 local Tab = Window:MakeTab({
-	Name = "Verified Scripts",
-	Icon = "rbxassetid://7072706536",
+	Name = "Visuals",
+	Icon = "rbxassetid://7733774602",
 	PremiumOnly = false
-})
-
-Tab:AddParagraph("Most Used Hub", "Solaris, best free and paid script. loads of features")
-
-Tab:AddButton({
-	Name = "Solaris Hub",
-	Callback = function()
-		loadstring(game:HttpGet('https://solarishub.dev/script.lua',true))()
-  	end    
-})
-
-Tab:AddDropdown({
-	Name = "Solaris Games",
-	Default = "Phantom Forces",
-	Options = {"Phantom Forces", "AUT" , "Arsenal", "Bad Business", "Big Paintball", "Blade Quest", "Clicker Madness", "Counter Blox", "Energy Assault", "Da Hood", "Jailbreak", "KAT", "Kings Legacy SS", "Murder Mystery", "Notoriety", "SCP Roleplay", "Shindo Life", "TOH", "Kings Legacy"},
-	Callback = function(Value)
-		
-	end    
-})
-
-Tab:AddParagraph("Universal","For all games")
-
-Tab:AddButton({
-	Name = "mollermethod",
-	Callback = function()
-      	loadstring (game:HttpGetAsync 'https://mthd.ml') {}
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Orca",
-	Callback = function()
-		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua"))()
-		OrionLib:MakeNotification({
-        	Name = "Thank you for using Orca!",
-        	Content = "Made by 0866#3049",
-        	Image = "rbxassetid://6031302916",
-        	Time = 10
-        })
-        Sounds(2)
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Fates Admin",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Infinite Yield",
-	Callback = function()
-      	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "OpenHub",
-	Callback = function()
-      	loadstring(game:HttpGet"https://raw.githubusercontent.com/ManuSoftware34/OpenHub/main/Latest")()
-  	end    
-})
-
-Tab:AddParagraph("Simulator", "Simulator Games")
-
-Tab:AddButton({
-	Name = "Hades Hub (Sonic Speed Sim)",
-	Callback = function()
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/HadesRblx/src/master/HadesHub.lua", true))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "KJ HUB (Anime Fighters Sim)",
-	Callback = function()
-		loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/KiJinGaming/FreeScript/main/KJHub.lua"))();
-  	end    
-})
-
-Tab:AddButton({
-	Name = "SAZA HUB (PET SIM X)",
-	Callback = function()
-      	loadstring(game:HttpGet"https://scriptblox.com/raw/SAZA-HUB_496")()
-  	end    
-})
-
-Tab:AddParagraph("AutoPlay", "AutoPlay For games")
-
-Tab:AddButton({
-	Name = "Wally AutoPlayer (FUNKYFRIDAY)",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua"))()
-  	end    
-})
-
-Tab:AddParagraph("FPS Games", "Arsenal, Phantom Forces, Counterblox style")
-
-Tab:AddButton({
-	Name = "Elite Hub (Criminality)",
-	Callback = function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/T-byte-sketch/Elite-V3/main/Elite%20V3'))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "InnoHub (Arsenal)",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Innocentallity/Scripts/main/InnoHubNewerNewCauseSkids"))();
-  	end    
 })
 
 local Tab = Window:MakeTab({
-	Name = "Your Scripts",
-	Icon = "rbxassetid://7072705696",
+	Name = "Aimbot",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab:AddParagraph("Tutorial on how to add scripts:", "To add scripts, go to the VisionConfigs folder and then next go in Scripts. After you have done this, add TXT or LUA files containing the script.")
-
-for Index, Scripts in ipairs(listfiles("VisionConfigs/Scripts")) do
-	Scripts = string.gsub(Scripts, [[VisionConfigs/Scripts\]], "")
-	Tab:AddButton({
-		Name = Scripts,
-		Callback = function()
-			loadstring(readfile("VisionConfigs/Scripts/" .. Scripts))() --
-		end
-	})
-end
-
-local Tab = Window:MakeTab({
-	Name = "Develop Scripts",
-	Icon = "rbxassetid://6034789883",
-	PremiumOnly = false
-})
-
-Tab:AddParagraph("Hey Developer, here's a quick note:", "This is a tab where you can create scripts, using DarkDex, Hydroxide, SimpleSpy and more, You can request scripts in the discord server. Anyways not all scripts will work on your executor, unless you use Script-Ware. Script-Ware will have it's own edition of Dex. Thank you!")
-
-Tab:AddButton({
-	Name = "DarkDex",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Hydroxide (Remote Spy)",
-	Callback = function()
-      	local owner = "Upbolt"
-        local branch = "revision"
-        local function webImport(file)
-            return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
-        end
-        webImport("init")
-  	end    
-})
-
-Tab:AddButton({
-	Name = "SimpleSpy",
-	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
-  	end    
-})
 
 local Tab = Window:MakeTab({
     Name = "Music",
@@ -441,7 +286,7 @@ local Tab = Window:MakeTab({
     PremiumOnly = false
 })
 
-Tab:AddParagraph("How to use", "Add MP3 File(s) inside workspace and open the folder named VisionConfigs and go to Songs, then place the MP3 File there and re-execute script.")
+Tab:AddParagraph("How to use", "Add MP3 File(s) inside workspace and open the folder named VisionUniversal and go to Songs, then place the MP3 File there and re-execute script.")
 
 local Song = Instance.new("Sound")
 Song.Name = "Sound"
@@ -455,7 +300,7 @@ local Distortion = Instance.new("DistortionSoundEffect")
 Distortion.Parent = Song
 Distortion.Enabled = false
 
-local Songs = listfiles("VisionConfigs/Songs")
+local Songs = listfiles("VisionUniversal/Songs")
 
 for Index, SongFiles in ipairs(Songs) do
 	Songs[Index] = string.match(SongFiles, "([^/\\]+)[/\\]*$")
@@ -467,15 +312,15 @@ local SongDropdown = Tab:AddDropdown({
 	Options = Songs,
 	Callback = function(Value)	
 	    if getcustomasset then
-		    Song.SoundId = getcustomasset("VisionConfigs/Songs/" .. Value) 
+		    Song.SoundId = getcustomasset("VisionUniversal/Songs/" .. Value) 
 	    elseif getsynasset then
-	        Song.SoundId = getsynasset("VisionConfigs/Songs/" .. Value)
+	        Song.SoundId = getsynasset("VisionUniversal/Songs/" .. Value)
 	    end
 	end      
 })
 
 local function RefreshSongs()
-	Songs = listfiles("VisionConfigs/Songs")
+	Songs = listfiles("VisionUniversal/Songs")
 	for Index, SongFiles in ipairs(Songs) do
 		Songs[Index] = string.match(SongFiles, "([^/\\]+)[/\\]*$")
 	end
@@ -521,7 +366,7 @@ Tab:AddSlider({
 	Min = 0.5,
 	Max = 10,
 	Default = 1,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Increment = 0.5,
 	ValueName = "Volume",
 	Callback = function(Value)
@@ -533,7 +378,7 @@ Tab:AddSlider({
 Tab:AddToggle({
 	Name = "Loop",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Callback = function(Value)
 		Song.Looped = Value
 	end
@@ -542,7 +387,7 @@ Tab:AddToggle({
 Tab:AddToggle({
 	Name = "Reverb",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Callback = function(Value)
 		Reverb.Enabled = Value
 	end
@@ -551,11 +396,118 @@ Tab:AddToggle({
 Tab:AddToggle({
 	Name = "Distortion",
 	Default = false,
-	Color = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Color = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Callback = function(Value)
 		Distortion.Enabled = Value
 	end
 })
+
+local Tab = Window:MakeTab({
+	Name = "Your Scripts",
+	Icon = "rbxassetid://7733779730",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Tutorial on how to add scripts:", "To add scripts, go to the VisionUniversal folder and then next go in Scripts. After you have done this, add TXT or LUA files containing the script.")
+
+for Index, Scripts in ipairs(listfiles("VisionUniversal/Scripts")) do
+	Scripts = string.gsub(Scripts, [[VisionUniversal/Scripts\]], "")
+	Tab:AddButton({
+		Name = Scripts,
+		Callback = function()
+			loadstring(readfile("VisionUniversal/Scripts/" .. Scripts))() --
+		end
+	})
+end
+
+local Tab = Window:MakeTab({
+	Name = "Develop Scripts",
+	Icon = "rbxassetid://7734002839",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Hey Developer, here's a quick note:", "This is a tab where you can create scripts, using DarkDex, Hydroxide, SimpleSpy and more, You can request scripts in the discord server. Anyways not all scripts will work on your executor, unless you use Script-Ware. Script-Ware will have it's own edition of Dex. Thank you!")
+
+Tab:AddButton({
+	Name = "DarkDex",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/mainUniversal/BypassedDarkDexV3.lua", true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Hydroxide (Remote Spy)",
+	Callback = function()
+      	local owner = "Upbolt"
+        local branch = "revision"
+        local function webImport(file)
+            return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+        end
+        webImport("init")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "SimpleSpy",
+	Callback = function()
+      	loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+  	end    
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "Server Info",
+	Icon = "rbxassetid://7072721644",
+	PremiumOnly = false
+})
+
+Tab:AddLabel("Place: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name)
+Tab:AddLabel("Place ID: " .. game.PlaceId)
+Tab:AddLabel("Server Job ID: " .. game.JobId)
+local PlayerAmount = Tab:AddLabel("Players: undefined")
+Tab:AddLabel("Maximum Players: " .. Players.MaxPlayers)
+local ServerAge = Tab:AddLabel("In server: undefined")
+
+RunService.RenderStepped:Connect(function()
+	PlayerAmount:Set("Players: " .. #Players:GetPlayers())
+	local Seconds = math.floor(workspace.DistributedGameTime)
+	local Minutes = math.floor(workspace.DistributedGameTime / 60)
+	local Hours = math.floor(workspace.DistributedGameTime / 60 / 60)
+	Seconds = Seconds - (Minutes * 60)
+	Minutes = Minutes - (Hours * 60)
+	if string.len(Seconds) == 1 and not string.find(Seconds, "0") then
+		Seconds = "0" .. Seconds
+	elseif string.len(Seconds) == 1 and string.find(Seconds, "0") then
+		Seconds = "00"
+	end
+	if Hours < 1 then 
+		if Minutes < 1 then
+			ServerAge:Set("In Server: 00:" .. Seconds)
+		else
+			ServerAge:Set("In Server: " .. Minutes .. ":" .. Seconds)
+		end
+	else
+		ServerAge:Set("In Server: " .. Hours .. ":" .. Minutes .. ":" .. Seconds)
+	end
+end) -- if anyone is seeing this i fucking hate this codeblock
+---i se
+local PreventCopy = true
+Tab:AddDropdown({
+	Name = "Invite",
+	Default = "Console Link",
+	Options = {"Console Link"},
+	Callback = function(Value)
+		if not PreventCopy then
+			if Value == "Console Link" then
+				setclipboard("Roblox.GameLauncher.joinGameInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')") -- will be more in future
+			end
+		end
+	end
+})
+task.spawn(function()
+	task.wait(3)
+	PreventCopy = false
+end)
 
 local Tab = Window:MakeTab({
 	Name = "Settings",
@@ -563,15 +515,15 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddLabel("Re-execute Sentiment to apply colors.")
+Tab:AddLabel("Re-execute Vision to apply colors.")
 
 Tab:AddColorpicker({
 	Name = "UI Color",
-	Default = Color3.new(tonumber(readfile("VisionConfigs/Core/color.r")), tonumber(readfile("VisionConfigs/Core/color.g")), tonumber(readfile("VisionConfigs/Core/color.b"))),
+	Default = Color3.new(tonumber(readfile("VisionUniversal/Core/color.r")), tonumber(readfile("VisionUniversal/Core/color.g")), tonumber(readfile("VisionUniversal/Core/color.b"))),
 	Callback = function(Color)
-	    writefile("VisionConfigs/Core/color.r", tostring(Color.R))
-	    writefile("VisionConfigs/Core/color.g", tostring(Color.G))
-	    writefile("VisionConfigs/Core/color.b", tostring(Color.B))
+	    writefile("VisionUniversal/Core/color.r", tostring(Color.R))
+	    writefile("VisionUniversal/Core/color.g", tostring(Color.G))
+	    writefile("VisionUniversal/Core/color.b", tostring(Color.B))
 	end	  
 })
 
@@ -600,144 +552,10 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "Delete Config (common fix)",
     Callback = function()
-        delfolder("VisionConfigs")
+        delfolder("VisionUniversal")
 	end    
 })
 
-local Tab = Window:MakeTab({
-	Name = "Server Info",
-	Icon = "rbxassetid://7072721644",
-	PremiumOnly = false
-})
-
-Tab:AddLabel("Place: " .. MarketplaceService:GetProductInfo(game.PlaceId).Name)
-Tab:AddLabel("Place ID: " .. game.PlaceId)
-Tab:AddLabel("Server Job ID: " .. game.JobId)
-local PlayerAmount = Tab:AddLabel("Players: undefined")
-Tab:AddLabel("Maximum Players: " .. Players.MaxPlayers)
-local ServerAge = Tab:AddLabel("Server Age: undefined")
-
-RunService.RenderStepped:Connect(function()
-	PlayerAmount:Set("Players: " .. #Players:GetPlayers())
-	local Seconds = math.floor(workspace.DistributedGameTime)
-	local Minutes = math.floor(workspace.DistributedGameTime / 60)
-	local Hours = math.floor(workspace.DistributedGameTime / 60 / 60)
-	Seconds = Seconds - (Minutes * 60)
-	Minutes = Minutes - (Hours * 60)
-	if string.len(Seconds) == 1 and not string.find(Seconds, "0") then
-		Seconds = "0" .. Seconds
-	elseif string.len(Seconds) == 1 and string.find(Seconds, "0") then
-		Seconds = "00"
-	end
-	if Hours < 1 then 
-		if Minutes < 1 then
-			ServerAge:Set("Server Age: 00:" .. Seconds)
-		else
-			ServerAge:Set("Server Age: " .. Minutes .. ":" .. Seconds)
-		end
-	else
-		ServerAge:Set("Server Age: " .. Hours .. ":" .. Minutes .. ":" .. Seconds)
-	end
-end) -- if anyone is seeing this i fucking hate this codeblock
----i se
-local PreventCopy = true
-Tab:AddDropdown({
-	Name = "Invite",
-	Default = "Console Link",
-	Options = {"Console Link"},
-	Callback = function(Value)
-		if not PreventCopy then
-			if Value == "Console Link" then
-				setclipboard("Roblox.GameLauncher.joinGameInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')") -- will be more in future
-			end
-		end
-	end
-})
-task.spawn(function()
-	task.wait(3)
-	PreventCopy = false
-end)
-
-local Tab = Window:MakeTab({
-	Name = "User Info",
-	Icon = "rbxassetid://6023426915",
-	PremiumOnly = false
-})
-
-Tab:AddDropdown({
-	Name = "Executor",
-	Default = identifyexecutor(),
-	Options = {identifyexecutor()},
-	Callback = function(Value)
-		
-	end    
-})
-
-Tab:AddDropdown({
-	Name = "Username",
-	Default = LocalPlayer.Name,
-	Options = {LocalPlayer.Name},
-	Callback = function(Value)
-
-	end    
-})
-
-Tab:AddDropdown({
-	Name = "Permissions",
-	Default = "Developer: False",
-	Options = {"Blacklist: False", "Whitelist: False", "Developer: False"},
-	Callback = function(Value)
-
-	end    
-})
-
-local Tags = {
-    [1558968057] = "Developer"
-	--add for example [UserID, USERID] = "rank you want"
-}
-
-for Index, TextLabel in pairs(Orion:GetDescendants()) do
-    if TextLabel:IsA("TextLabel") then
-        if TextLabel.Text == "Standard" or TextLabel.Text == "Premium" then
-            Label = TextLabel
-			Label.Text = "User"
-        end
-    end
-end
-
-for Id, Name in pairs(Tags) do
-    if LocalPlayer.UserId == Id then
-        Label.Text = Name
-    end
-end
-
-local Tab = Window:MakeTab({
-	Name = "Credits",
-	Icon = "rbxassetid://7072717857",
-	PremiumOnly = false
-})
-
-Tab:AddDropdown({
-	Name = "Universal Script Developer",
-	Default = "Ultik#0001",
-	Options = {"Ultik#0001"},
-	Callback = function(Value)
-		
-	end 
-})
-
-Tab:AddParagraph("Library", "Orion by Sirius Software | discord.gg/sirius")
-Tab:AddParagraph("Made for", "Script-Ware | https://script-ware.com")
-Tab:AddParagraph("mollermethod", "https://discord.gg/jncvgVrTcY")
-Tab:AddParagraph("Solaris", "discord.gg/solaris")
-Tab:AddParagraph("Orca", "Made By 0866#3049")
-Tab:AddParagraph("Other Credits", "In the script")
-Tab:AddButton({
-	Name = "Copy Vision Discord Server",
-	Callback = function()
-      	setclipboard("https://discord.gg/X2u99terb8")
-  	end    
-})
 
 -- Initialize OrionLib gui
 --hi ultik
