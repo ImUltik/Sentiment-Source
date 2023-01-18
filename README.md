@@ -89,9 +89,6 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Satella-Src/
 ## Credits
 - [Ultik](https://github.com/ImUltik):<br/>
   Founder
-- [Bea](https://github.com/beailotus):<br/>
-  Developer
-- [Nil](https://github.com/nilIsHot):<br/>
-  Developer
-- [Rxyanlaw](https://github.com/Rxyanlaw):<br/>
+
+- [Manuel](https://github.com/ManuSoftware34):<br/>
   Developer
