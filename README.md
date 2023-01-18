@@ -1,4 +1,4 @@
-- [Sentiment](#sentiment)
+- [Sentiment](#Satella)
   - [Current Features](#current-features)
   - [Todo/Planned Features](#todoplanned-features)
   - [Suggestions](#suggestions)
