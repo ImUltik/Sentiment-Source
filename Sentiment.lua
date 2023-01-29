@@ -266,12 +266,33 @@ OrionLib:MakeNotification({
 	Time = 15
 })
 
+local Tab = Window:MakeTab({
+    Name = "Scripts",
+    Icon = "rbxassetid://2786652532",
+    PremiumOnly = false
+})
+
+
+Tab:AddButton({
+	Name = "Lisbon",
+	Callback = function()
+		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ImUltik/Lisbon/main/Source.lua"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Hydra Hub",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Main.lua"), true))()
+  	end    
+})
 
 local Tab = Window:MakeTab({
     Name = "Music",
     Icon = "rbxassetid://6026660075",
     PremiumOnly = false
 })
+
 
 Tab:AddParagraph("How to use", "Add MP3 File(s) inside workspace and open the folder named SentimentUniversal and go to Songs, then place the MP3 File there and re-execute script.")
 
