@@ -1,4 +1,4 @@
-- [Sentiment](#Satella)
+- [Sentiment](#Sentiment)
   - [Current Features](#current-features)
   - [Todo/Planned Features](#todoplanned-features)
   - [Suggestions](#suggestions)
@@ -95,3 +95,5 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-So
   
 - [Other people] -- I can't remember who was working for us. Sorry 😞  (Check Contributors)
   Developer(s)
+
+Some stuff won't appear in the script, this was supposed to be a priv rrepository with upcoming stuff.
