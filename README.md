@@ -93,5 +93,5 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-So
 - [Manuel](https://github.com/ManuSoftware34):<br/>
   Developer
   
-- [Other people] -- I can't remember who was working for us. Sorry 😞 
+- [Other people] -- I can't remember who was working for us. Sorry 😞  (Check Contributors)
   Developer(s)
