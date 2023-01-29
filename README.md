@@ -83,7 +83,7 @@
 
 ## Usage
 ```lua
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Satella-Src/main/Satella.lua?token=<token>"),true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/ImUltik/Sentiment-Source/main/Sentiment.lua"),true))()
 ```
 
 ## Credits
